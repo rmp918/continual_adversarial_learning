@@ -1,0 +1,1 @@
+{"aquatic_mammals": "0.2920", "fish": "0.3440"}

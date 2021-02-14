@@ -1,0 +1,1 @@
+{"aquatic_mammals": "0.2940", "fish": "0.3780", "flowers": "0.3500", "food_containers": "0.4000"}
