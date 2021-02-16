@@ -2,11 +2,13 @@
 ## Introduction
 With the mature development of image recognition technology, computer vision has also obtained impressive results in research through many well-known deep learning networks. However, in recent years, there have been problems related to image interference with model identification. The major problem is how to prevent people from using this technology to damage models or users when computer vision technology is commercialized or popularized in the future. From the perspective of defense, this research proposed a defense model, using the concepts of adversarial training and continual learning proposed by Madry to establish an effective and flexible model.
 
-We used this research to propose a CMAT model as our defense model against current well-known attacks. This research explored whether CMAT is applicable to defense networks through visualization and experimental data. This research is also the first paper in this field that used continual learning with basic defense techniques. I hope that the results of this paper could be used as an experimental reference for future related research. https://etd.lis.nsysu.edu.tw/ETD-db/ETD-search-c/view_etd?URN=etd-1118120-170138
+We used this research to propose a CMAT model as our defense model against current well-known attacks. This research explored whether CMAT is applicable to defense networks through visualization and experimental data. This research is also the first paper in this field that used continual learning with basic defense techniques. I hope that the results of this paper could be used as an experimental reference for future related research. 
+https://etd.lis.nsysu.edu.tw/ETD-db/ETD-search-c/view_etd?URN=etd-1118120-170138
 
 ## Implementation
 
-Part of the codes in this repo are borrowed/modified from Steven C. Y. Hung, Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming Chan, and Chu-Song Chen, "Compacting, Picking and Growing for Unforgetting Continual Learning," Thirty-third Conference on Neural Information Processing Systems, NeurIPS 2019 https://github.com/ivclab/CPG
+Part of the codes in this repo are borrowed/modified from Steven C. Y. Hung, Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming Chan, and Chu-Song Chen, "Compacting, Picking and Growing for Unforgetting Continual Learning," Thirty-third Conference on Neural Information Processing Systems, NeurIPS 2019
+https://github.com/ivclab/CPG
 
 ---
 
@@ -15,7 +17,7 @@ Part of the codes in this repo are borrowed/modified from Steven C. Y. Hung, Che
     PyTorch>=1.0
     tqdm
 ---
-
+## Result
 
 
 
