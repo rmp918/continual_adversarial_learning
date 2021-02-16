@@ -18,14 +18,14 @@ https://github.com/ivclab/CPG
     tqdm
 ---
 ## Result
+![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/CMAT_structure.png)
 
 
 
 
 
-
-
-
+![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/Visualization-of-accuracy-on-Cifar-100.png)
+We visualized our result by this bar chart. We compared PackNet and CMAT 
 
 
 ## References:
