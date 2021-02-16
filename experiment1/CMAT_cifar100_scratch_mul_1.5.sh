@@ -50,7 +50,7 @@ for task_id in `seq 1 20`; do
     while [ $state -eq 2 ]; do
         if [ "$task_id" != "1" ]
         then
-            CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_cifar100_main_normal.py \
+            CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_cifar100_main_normal.py \
                 --arch $arch \
                 --dataset ${dataset[task_id]} --num_classes $num_classes \
                 --lr $lr \
@@ -68,7 +68,7 @@ for task_id in `seq 1 20`; do
                 --log_path checkpoints/CPG/experiment1/$setting/$arch/${dataset[task_id]}/train.log \
                 --total_num_tasks $total_num_tasks
         else
-            CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_cifar100_main_normal.py \
+            CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_cifar100_main_normal.py \
                 --arch $arch \
                 --dataset ${dataset[task_id]} --num_classes $num_classes \
                 --lr $lr \
@@ -109,7 +109,7 @@ for task_id in `seq 1 20`; do
     then
         echo $state
         # gradually pruning
-        CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_cifar100_main_normal.py \
+        CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_cifar100_main_normal.py \
             --arch $arch \
             --dataset ${dataset[task_id]} --num_classes $num_classes \
             --lr $gradual_prune_lr \
@@ -143,7 +143,7 @@ for task_id in `seq 1 20`; do
                     end_sparsity=$(bc <<< $end_sparsity+0.05)
                 fi
 
-                CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_cifar100_main_normal.py \
+                CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_cifar100_main_normal.py \
                     --arch $arch \
                     --dataset ${dataset[task_id]} --num_classes $num_classes \
                     --lr $gradual_prune_lr \
@@ -186,7 +186,7 @@ for task_id in `seq 1 20`; do
     if [ $task_id != 1 ] && [ $state -ne 5 ]
     then
     	# Retrain piggymask and weight
-    	CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_cifar100_main_normal.py \
+    	CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_cifar100_main_normal.py \
     	    --arch $arch \
     	    --dataset ${dataset[task_id]} --num_classes $num_classes \
     	    --lr $gradual_prune_lr \
