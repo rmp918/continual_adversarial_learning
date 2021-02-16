@@ -41,7 +41,7 @@ for task_id in `seq $TARGET_TASK_ID $TARGET_TASK_ID`; do
     while [ $state -eq 2 ]; do
         if [ "$task_id" != "1" ]
         then
-            CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_imagenet_main-Copy1.py \
+            CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_imagenet_main-Copy1.py \
                --arch $arch \
                --dataset ${dataset[task_id]} --num_classes ${num_classes[task_id]} \
                --lr ${init_lr[task_id]} \
@@ -57,7 +57,7 @@ for task_id in `seq $TARGET_TASK_ID $TARGET_TASK_ID`; do
                --log_path checkpoints/CPG/experiment2/$arch/${dataset[task_id]}/train.log \
                --adv_train
         else
-            CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_imagenet_main-Copy1.py \
+            CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_imagenet_main-Copy1.py \
                --arch $arch \
                --dataset ${dataset[task_id]} --num_classes ${num_classes[task_id]} \
                --lr ${init_lr[task_id]} \
@@ -102,7 +102,7 @@ for task_id in `seq $TARGET_TASK_ID $TARGET_TASK_ID`; do
     if [ $state -ne 5 ]
     then
         # gradually pruning
-        CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_imagenet_main-Copy1.py \
+        CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_imagenet_main-Copy1.py \
             --arch $arch \
             --dataset ${dataset[task_id]} --num_classes ${num_classes[task_id]}  \
             --lr ${pruning_lr[task_id]} \
@@ -132,7 +132,7 @@ for task_id in `seq $TARGET_TASK_ID $TARGET_TASK_ID`; do
                 end_sparsity=0.15
             fi
 
-            CUDA_VISIBLE_DEVICES=$GPU_ID python CPG_imagenet_main-Copy1.py \
+            CUDA_VISIBLE_DEVICES=$GPU_ID python CMAT_imagenet_main-Copy1.py \
                 --arch $arch \
                 --dataset ${dataset[task_id]} --num_classes ${num_classes[task_id]} \
                 --lr ${pruning_lr[task_id]} \
