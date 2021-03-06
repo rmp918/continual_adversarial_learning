@@ -17,10 +17,11 @@ https://github.com/ivclab/CPG
     PyTorch>=1.0
     tqdm
 ---
-## CMAT_Structure
+## CMAT Structure
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/CMAT_structure.png)
 
-This structure modified by CPG structure.
+CMAT is adapted from the architecture of CPG. The biggest difference is to change the way of training, from the normal training of CPG to adversarial training. 
+Through the original CPG architecture, we hope that when the model learns multiple tasks, it can use what has been learned before to enhance the performance of the following tasks as much as possible. 
 
 
 ## Result
