@@ -28,7 +28,7 @@ Through the original CPG architecture, we hope that when the model learns multip
 
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/Visualization-of-accuracy-on-Cifar-100.png)
 
-We visualized our result by this bar chart. We compared PackNet and CMAT 
+We showed the accuracy over various difficulties on Cifar-100. In this bar chart, the accuracy was gradually decreasing as the step size increases. The simpler the perturbation had the higher accuracy was. It indicated that as the difficulty increases or decreases, the relative accuracy had a negative correlation with the difficulty. This situation was also in line with previous research findings. And comparing CMAT with PackNet, we could see that CMAT also had the better accuracy.
 
 
 ## References:
