@@ -1,13 +1,13 @@
 # continual_adversarial_learning
 ## Introduction
-With the mature development of image recognition technology, computer vision has also obtained impressive results in research through many well-known deep learning networks. However, in recent years, there have been problems related to image interference with model identification. The major problem is how to prevent people from using this technology to damage models or users when computer vision technology is commercialized or popularized in the future. From the perspective of defense, this research proposed a defense model, using the concepts of adversarial training and continual learning proposed by Madry to establish an effective and flexible model.
+    With the mature development of image recognition technology, computer vision has also obtained impressive results in research through many well-known deep learning networks. However,  in recent years, there have been problems related to image interference with model identification. The major problem is how to prevent people from using this technology to damage models or users when computer vision technology is commercialized or popularized in the future. From the perspective of defense, this research proposed a defense model, using the concepts of adversarial training and continual learning proposed by Madry to establish an effective and flexible model.
 
-We used this research to propose a CMAT model as our defense model against current well-known attacks. This research explored whether CMAT is applicable to defense networks through visualization and experimental data. This research is also the first paper in this field that used continual learning with basic defense techniques. I hope that the results of this paper could be used as an experimental reference for future related research. 
+    We used this research to propose a CMAT model as our defense model against current well-known attacks. This research explored whether CMAT is applicable to defense networks through visualization and experimental data. This research is also the first paper in this field that used continual learning with basic defense techniques. I hope that the results of this paper could be used as an experimental reference for future related research. 
 https://etd.lis.nsysu.edu.tw/ETD-db/ETD-search-c/view_etd?URN=etd-1118120-170138
 
 ## Implementation
 
-Part of the codes in this repo are borrowed/modified from Steven C. Y. Hung, Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming Chan, and Chu-Song Chen, "Compacting, Picking and Growing for Unforgetting Continual Learning," Thirty-third Conference on Neural Information Processing Systems, NeurIPS 2019
+    Part of the codes in this repo are borrowed/modified from Steven C. Y. Hung, Cheng-Hao Tu, Cheng-En Wu, Chien-Hung Chen, Yi-Ming Chan, and Chu-Song Chen, "Compacting, Picking and Growing for Unforgetting Continual Learning," Thirty-third Conference on Neural Information Processing Systems, NeurIPS 2019
 https://github.com/ivclab/CPG
 
 ---
@@ -20,7 +20,7 @@ https://github.com/ivclab/CPG
 ## CMAT Structure
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/CMAT_structure.png)
 
-CMAT is adapted from the architecture of CPG. The biggest difference is to change the way of training, from the normal training of CPG to adversarial training. 
+    CMAT is adapted from the architecture of CPG. The biggest difference is to change the way of training, from the normal training of CPG to adversarial training. 
 Through the original CPG architecture, we hope that when the model learns multiple tasks, it can use what has been learned before to enhance the performance of the following tasks as much as possible. 
 
 
@@ -28,7 +28,15 @@ Through the original CPG architecture, we hope that when the model learns multip
 
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/Visualization-of-accuracy-on-Cifar-100.png)
 
-We showed the accuracy over various difficulties on Cifar-100. In this bar chart, the accuracy was gradually decreasing as the step size increases. The simpler the perturbation had the higher accuracy was. It indicated that as the difficulty increases or decreases, the relative accuracy had a negative correlation with the difficulty. This situation was also in line with previous research findings. And comparing CMAT with PackNet, we could see that CMAT also had the better accuracy.
+    We showed the accuracy over various difficulties on Cifar-100. In this bar chart, the accuracy was gradually decreasing as the step size increases. The simpler the perturbation had the higher accuracy was. It indicated that as the difficulty increases or decreases, the relative accuracy had a negative correlation with the difficulty. This situation was also in line with previous research findings. And comparing CMAT with PackNet, we could see that CMAT also had the better accuracy.
+
+![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/Comparison%20with%20different%20method.png)
+    We compared with different method about defense model. All of these result used PGD-10/PGD-40 and perturbation 𝜖=8/255.We found our result and PackNet that they were higher performance than others.PackNet outperformed adversarial training by 9% of accuracy, and at least outperformed ANP-VS by 4% of accuracy; CMAT could be better than PackNet by about 3%. The model we implemented was a relatively simple and basic method of adversarial training. We proved our method(CMAT) was the best model on defense adversarial attack on Cifar-100 dataset.
+
+![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/PackNet%20experiment%20in%20high-resolution%20datasets.png)
+![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/CMAT%20experiment%20in%20high-resolution%20datasets.png)
+    We can find our model and PackNet that they were good performance about recognizing high-resolution image. We also used F1-score to prove the correctness about our result. Although the performance of the first data set was relatively poor at the beginning, it could have better performance in subsequent datasets. The reason was that continual learning networks such as PackNet and CPG usually do more pruning or compression networks in the first dataset, and then gradually improve its performance. This phenomenon also occurred in recognizing normal pictures (Hung et al., 2019).
+
 
 
 ## References:
