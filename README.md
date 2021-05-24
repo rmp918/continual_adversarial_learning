@@ -32,10 +32,12 @@ Through the original CPG architecture, we hope that when the model learns multip
    We showed the accuracy over various difficulties on Cifar-100. In this bar chart, the accuracy was gradually decreasing as the step size increases. The simpler the perturbation had the higher accuracy was. It indicated that as the difficulty increases or decreases, the relative accuracy had a negative correlation with the difficulty. This situation was also in line with previous research findings. And comparing CMAT with PackNet, we could see that CMAT also had the better accuracy.
 
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/Comparison%20with%20different%20method.png)
+   
    We compared with different method about defense model. All of these result used PGD-10/PGD-40 and perturbation 𝜖=8/255.We found our result and PackNet that they were higher performance than others.PackNet outperformed adversarial training by 9% of accuracy, and at least outperformed ANP-VS by 4% of accuracy; CMAT could be better than PackNet by about 3%. The model we implemented was a relatively simple and basic method of adversarial training. We proved our method(CMAT) was the best model on defense adversarial attack on Cifar-100 dataset.
 
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/PackNet%20experiment%20in%20high-resolution%20datasets.png)
 ![image](https://github.com/rmp918/continual_adversarial_learning/blob/main/CMAT%20experiment%20in%20high-resolution%20datasets.png)
+   
    We can find our model and PackNet that they were good performance about recognizing high-resolution image. We also used F1-score to prove the correctness about our result. Although the performance of the first data set was relatively poor at the beginning, it could have better performance in subsequent datasets. The reason was that continual learning networks such as PackNet and CPG usually do more pruning or compression networks in the first dataset, and then gradually improve its performance. This phenomenon also occurred in recognizing normal pictures (Hung et al., 2019).
 
 
